@@ -1,5 +1,5 @@
 ---
-title: 'drinkPani '
+title: 'drinkPani - '
 subtitle: Water Quality Monitoring Organization
 date: '2019-04-30'
 thumb_image: /images/drinkPani.jpg
