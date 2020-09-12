@@ -1,6 +1,6 @@
 ---
 title: Blog
-subtitle: 'News, tips and highlights'
+subtitle: 'Notes, tips and my diary.'
 hide_title: false
 col_number: three
 template: blog
