@@ -1,6 +1,6 @@
 ---
 title: Explore Dhangadhi
-subtitle: A small river in the village of Dhangadhi
+subtitle: A small river in the village of Fulbari
 date: '2019-05-10'
 thumb_image: images/1_thumb.jpg
 image: images/1.jpg
