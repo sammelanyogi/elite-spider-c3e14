@@ -1,6 +1,6 @@
 ---
 title: Explore Dhangadhi
-subtitle: Optional Project Subtitle
+subtitle: 'A small river '
 date: '2019-05-10'
 thumb_image: images/1_thumb.jpg
 image: images/1.jpg
