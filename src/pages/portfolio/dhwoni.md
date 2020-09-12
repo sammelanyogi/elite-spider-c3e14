@@ -1,9 +1,9 @@
 ---
-title: Project Title 5
+title: Dhwoni - Nepali CSR
 subtitle: Optional Project Subtitle
-date: '2019-01-05'
-thumb_image: images/5_thumb.jpg
-image: images/5.jpg
+date: '2020-02-10'
+thumb_image: images/dhwoni.jpg
+image: images/dhwoni.jpg
 template: project
 ---
 

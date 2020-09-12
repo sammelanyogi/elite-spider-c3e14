@@ -1,7 +1,7 @@
 ---
 title: Love in Sikles
 subtitle: 'Lovely friends, beautiful sunshine and morning breeze.'
-date: '2019-02-26'
+date: '2018-07-26'
 thumb_image: /images/sikles.jpg
 image: images/4.jpg
 template: project

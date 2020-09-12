@@ -11,6 +11,8 @@ import SectionPortfolio from './SectionPortfolio';
 import SectionPosts from './SectionPosts';
 import SectionTestimonials from './SectionTestimonials';
 import Layout from './Layout';
+import "katex/dist/katex.min.css";
+import "prismjs/themes/prism.css";
 
 export {
     ActionLink,
