@@ -7,8 +7,10 @@ sections:
     title: 'Hi, I''m Sammelan Yogi.'
     section_id: hero
     content: >-
-      This section can contain a subtitle or tagline. The recommended length is
-      one to three sentences, but can be changed as you prefer.
+      I am computer engineering student and love to write about my thoughts on
+      machine learning problems, mathematics illustrations and occasionally sad
+      poems. I like travelling, watching movies, overdosing coffee and sometimes
+      reading novel while overdosing coffee.
     actions:
       - type: action
         template: action
