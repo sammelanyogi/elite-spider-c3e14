@@ -1,6 +1,6 @@
 ---
 title: Love in Sikles
-subtitle: 'Started the day with a beautiful sunshine and '
+subtitle: Started the day with a beautiful sunshine and morning breeze.
 date: '2019-02-26'
 thumb_image: images/4_thumb.jpg
 image: images/4.jpg
