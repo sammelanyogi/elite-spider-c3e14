@@ -7,7 +7,7 @@ sections:
     title: 'Hi, I''m Sammelan Yogi.'
     section_id: hero
     content: >-
-      I am computer engineering student and love to write about my thoughts on
+      I am a computer engineering student and love to write about my thoughts on
       machine learning problems, mathematics illustrations and occasionally sad
       poems. I like travelling, watching movies, overdosing coffee and sometimes
       reading novel while overdosing coffee.

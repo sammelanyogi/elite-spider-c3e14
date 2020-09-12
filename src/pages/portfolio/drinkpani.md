@@ -1,7 +1,7 @@
 ---
 title: drinkPani - Water Version 2.0
 subtitle: Water Quality Monitoring Organization
-date: '2019-04-30'
+date: '2020-01-13'
 thumb_image: /images/drinkPani.jpg
 image: images/2.jpg
 template: project

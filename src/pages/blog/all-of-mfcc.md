@@ -1,6 +1,6 @@
 ---
-title: Why Fonts Matter
-date: '2019-03-27'
+title: All of MFCC
+date: '2020-09-07'
 thumb_image: images/12.jpg
 image: images/12.jpg
 excerpt: >-
