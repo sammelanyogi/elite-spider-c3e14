@@ -34,7 +34,7 @@ sections:
         default_value: Please select
         options:
           - Error on the site
-          - Talk about blog
+          - Talk about my blog
           - Other
       - type: form_field
         template: form_field
