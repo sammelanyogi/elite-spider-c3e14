@@ -1,6 +1,6 @@
 ---
 title: Portfolio
-subtitle: 'Hello. '
+subtitle: ''
 layout_style: mosaic
 template: portfolio
 ---
