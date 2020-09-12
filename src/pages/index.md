@@ -17,6 +17,19 @@ sections:
         label: Let's talk
         url: /contact
         style: button
+  - type: section_posts
+    template: section_posts
+    title: Latest from the Blog
+    section_id: latest-posts
+    subtitle: An optional subtitle of the section
+    posts_number: 3
+    col_number: three
+    actions:
+      - type: action
+        template: action
+        label: View Blog
+        url: blog
+        style: button
   - type: section_portfolio
     template: section_portfolio
     title: Recent Work
@@ -63,18 +76,5 @@ sections:
         content: >-
           Vestibulum a nunc ut eros condimentum posuere. Nullam dapibus quis
           nunc non interdum. Pellentesque tortor ligula, gravida ac commodo eu.
-  - type: section_posts
-    template: section_posts
-    title: Latest from the Blog
-    section_id: latest-posts
-    subtitle: An optional subtitle of the section
-    posts_number: 3
-    col_number: three
-    actions:
-      - type: action
-        template: action
-        label: View Blog
-        url: blog
-        style: button
 template: advanced
 ---
