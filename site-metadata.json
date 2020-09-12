@@ -6,7 +6,7 @@
     "header": {
         "type": "header",
         "template": "header",
-        "title": "Exto",
+        "title": "Sammelan",
         "has_nav": true,
         "nav_links": [
             {
