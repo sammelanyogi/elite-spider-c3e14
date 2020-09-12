@@ -63,7 +63,7 @@
                 "template": "action",
                 "label": "Made with <3.",
                 "url": "https://sammelan.com.np",
-                "style": "icon",
+                "style": "link",
                 "new_window": true
             }
         ],
