@@ -90,7 +90,7 @@
             {
                 "type": "action",
                 "template": "action",
-                "label": "Dribbble",
+                "label": "Github",
                 "url": "https://dribbble.com/",
                 "style": "icon",
                 "icon_class": "fa-dribbble",
