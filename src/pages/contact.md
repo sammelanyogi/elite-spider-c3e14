@@ -8,7 +8,7 @@ sections:
     content: >-
       Hi there! Thank you so much for your interest in working together. Please
       fill the contact form below or send me an email at
-      [mail@sammelan.comnp](mailto:mail@sammelan.com.np).
+      [mail@sammelan.com.np](mailto:mail@sammelan.com.np).
     form_id: contactForm
     form_action: /thank-you
     form_fields:
