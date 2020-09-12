@@ -1,6 +1,6 @@
 ---
 title: Manasa
-subtitle: A Nepali language
+subtitle: 'A Nepali languagen '
 date: '2019-04-08'
 thumb_image: images/3_thumb.jpg
 image: images/3.jpg
