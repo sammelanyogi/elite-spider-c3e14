@@ -61,7 +61,7 @@
             {
                 "type": "action",
                 "template": "action",
-                "label": "Made with Stackbit.",
+                "label": "Made with <3.",
                 "url": "https://www.stackbit.com",
                 "style": "link",
                 "new_window": true
