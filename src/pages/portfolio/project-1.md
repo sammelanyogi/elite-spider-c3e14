@@ -1,6 +1,6 @@
 ---
 title: Explore Dhangadhi
-subtitle: A small river in the village of Dhan
+subtitle: A small river in the village of Dhangadhi
 date: '2019-05-10'
 thumb_image: images/1_thumb.jpg
 image: images/1.jpg
