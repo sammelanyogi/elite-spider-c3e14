@@ -2,7 +2,7 @@ import React from 'react';
 import _ from 'lodash';
 import {graphql} from 'gatsby';
 
-import {Layout} from '../components/index';
+import components, {Layout} from '../components/index';
 import {getPages, Link, withPrefix} from '../utils';
 
 // this minimal GraphQL query ensures that when 'gatsby develop' is running,
@@ -27,6 +27,13 @@ export default class Portfolio extends React.Component {
                 <p className="page-subtitle">{_.get(this.props, 'pageContext.frontmatter.subtitle', null)}</p>
                 )}
               </header>
+              {_.map(_.get(this.props, 'pageContext.frontmatter.sections', null), (section, section_idx) => {
+                  let component = _.upperFirst(_.camelCase(_.get(section, 'type', null)));
+                  let Component = components[component];
+                  return (
+                    <Component key={section_idx} {...this.props} section={section} site={this.props.pageContext.site} />
+                  )
+              })}
               <div className={'portfolio-feed layout-' + _.get(this.props, 'pageContext.frontmatter.layout_style', null)}>
                 {_.map(display_projects, (post, post_idx) => (
                 <article key={post_idx} className="project">
