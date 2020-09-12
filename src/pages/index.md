@@ -22,8 +22,8 @@ sections:
     title: Recent Work
     section_id: latest-projects
     subtitle: >-
-      Here are some of my recent projects. Currently I am working on my final
-      year project.
+      Here are some of my recent works. Currently I am working on my final year
+      project.
     layout_style: mosaic
     projects_number: 6
     view_all_label: View All
