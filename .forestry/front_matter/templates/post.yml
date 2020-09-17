@@ -37,11 +37,8 @@ fields:
   config:
     required: true
 pages:
-- src/pages/blog/function-of-design.md
 - src/pages/blog/games.md
 - src/pages/blog/green.md
 - src/pages/blog/interior-designer.md
 - src/pages/blog/street-photography.md
-- src/pages/blog/why-fonts-matter.md
 - src/pages/blog/working-from-home.md
-- src/pages/blog/workplace.md
