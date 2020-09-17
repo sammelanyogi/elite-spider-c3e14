@@ -89,4 +89,22 @@ I will use a example sound wave and process it in python to make it more clear.
    ```
 3. **Windowing**
 
-   Windowing multiplies the samples by a scaling function.
+   Windowing multiplies the samples by a scaling function. This is done to eliminate discontinuities at the edges of the frames. If the function of windows is defined as $w(n)$, 0 < n < N-1 where N is the number of samples per frame, the resulting signal will be;
+
+   $$
+
+   s(n) = x (n) w (n)
+
+   $$  
+   Generally hamming windows are used where
+
+   $$  
+   w(n) = 0.54 - 0.46 \cos\bigg(\frac{2\pi n}{N-1}\bigg)
+   $$
+
+   ```python
+   	frames = frames * np.hamming(frame_length)
+   ```
+4. **Fourier Transform**
+
+   Short-time Fourier transform (STFT) converts the 1-dimensional signal from the time domain into the frequency domain by using the frames and applying a discrete Fourier transform to each frames.
