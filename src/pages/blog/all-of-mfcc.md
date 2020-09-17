@@ -1,21 +1,51 @@
 ---
 title: All of MFCC
-date: '2020-09-07'
+date: 2020-09-07
 thumb_image: images/12.jpg
 image: images/12.jpg
-excerpt: >-
-  Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa
-  massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing
-  placerat lorem.
+excerpt: Sound is a wave. To store sound in a computer, waves of air pressure are
+  converted into voltage via microphone. It is then sampled with an analog-to-digital
+  converter where the output is stored as one dimensional array of number.
 template: post
+
 ---
+Sound is a wave. To store sound in a computer, waves of air pressure are converted into voltage via microphone. It is then sampled with an analog-to-digital converter where the output is stored as one dimensional array of number. Simply saying, audio file is just an array of amplitudes sampled with certain rate known as sampling rate. As a meta-property an audio file has sample rate, number of channels of sound and precision (bit depth).
 
-**Donec neque lorem**, sodales non fermentum et, aliquam quis erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tincidunt justo eu ante ultrices posuere. Duis cursus at massa ac tempus. Morbi sit amet mi sit amet lorem ullamcorper feugiat ac et dolor. Nullam rhoncus urna tincidunt odio ultricies, at dapibus felis facilisis. Ut condimentum nulla eget feugiat finibus. Suspendisse sit amet purus a eros dignissim commodo ut a erat.
+A standard telephone audio has sampling rate of 8 kHz and 16-bit precision.
 
-Phasellus commodo dolor sit amet, consectetur adipiscing elit. Nam a finibus magna. Sed et pulvinar dolor. Suspendisse vitae iaculis lacus. Proin vulputate, leo eget pulvinar faucibus, felis est condimentum lorem, in rhoncus neque felis ac leo. Duis felis lectus, ultrices id dolor vel, tincidunt tristique nunc. Nullam quis orci magna. Proin eget nunc et dolor hendrerit eleifend. Praesent a vehicula justo, quis convallis lacus. Phasellus porttitor, turpis vel placerat condimentum, urna felis volutpat ligula, et ultricies arcu mi ac nisl. Cras id consectetur ligula, et mollis odio. Aenean erat dui, congue vitae nisi a, aliquet lobortis eros.
+You might have heard a familiar term bit-rate (bit per second) which is sometimes used to measure the overall quality of an audio.  
+bit-rate = sample rate * precision * no. of channels
 
-> The beauty of type lies in its utility, prettiness without readability serves neither author nor reader. - James Felici
+A raw audio signal is high-dimensional and difficult to model as there are many information but consisting of many unwanted signals especially in case of human speech sound.
 
-Sed augue lorem, porta nec lorem et, luctus egestas nunc. Sed in tellus at enim commodo pharetra. Mauris nisi ipsum, auctor nec justo non, lobortis ullamcorper magna. Pellentesque posuere posuere dolor, quis egestas est ultrices id. Cras at urna lectus. Curabitur in placerat ligula. Phasellus pharetra scelerisque lectus, id sagittis lorem pretium eget. Phasellus commodo nunc ante, nec commodo urna iaculis eu. Pellentesque euismod et ante quis vestibulum. Ut quis sapien nisi. Sed interdum sit amet sem et vestibulum. Maecenas tempor dictum leo, quis rutrum purus tincidunt vitae. Fusce vel turpis risus. Donec congue accumsan tempus. Nunc nec elit magna. Aenean luctus auctor ligula at lacinia.
+**Mel-frequency Cepstrum** **Coefficients** (**MFCC)** tries to model the audio in a format where it perform those type of filtering that correlates to human auditory system and their low dimensionality. It is the most commonly used features for Automatic Speech Recognition (ASR). **Mel-frequency Cepstrum** (**MFC**) is a representation of the short-term power-spectrum of a sound, based on a linear cosine transform of a [log power spectrum](https://en.wikipedia.org/wiki/Power_spectrum "Power spectrum") on a nonlinear [Mel-scale](https://en.wikipedia.org/wiki/Mel_scale "Mel scale") of frequency and MFCC are the coefficients that collectively make up the MFC.
 
-Donec neque lorem, sodales non fermentum et, aliquam quis erat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tincidunt justo eu ante ultrices posuere. Duis cursus at massa ac tempus. Morbi sit amet mi sit amet lorem ullamcorper feugiat ac et dolor. Nullam rhoncus urna tincidunt odio ultricies, at dapibus felis facilisis. Ut condimentum nulla eget feugiat finibus. Suspendisse sit amet purus a eros dignissim commodo ut a erat. Maecenas pretium velit faucibus, porttitor lacus eu, eleifend sapien. In hac habitasse platea dictumst. Pellentesque nisi nisl, consectetur a accumsan sit amet, finibus vel nibh. Vivamus aliquet urna non turpis vehicula maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Following are the steps to compute MFCC.
+
+I will use a sound wave an process it in python to make it more clear.
+
+```python
+  import librosa 
+  import numpy as np 
+  import librosa.display
+  import matplotlib.pyplot as plt
+  import sounddevice as sd
+  y, sr = librosa.load("00a80b4c8a.flac", sr=16000)
+```
+
+1. Pre-emphasis
+
+   This is the first step in feature generation. In speech production, high frequencies usually have smaller magnitudes compared to lower frequencies. So in order to counter the effect we apply pre-emphasis signal to amply the amplitude of high frequencies and lower the amplitude of lower frequencies.
+
+   If $ x(t) $ is the signal,
+
+   $$
+   y(t) = x(t) - \\alpha x(t-1)
+   $$
+
+   Where, $\\alpha  $ is generally 0.95 or 0.97.
+
+   ```python
+       alpha = 0.97
+       y_emp = np.append(y[0], y[1:] - alpha * y[:-1])
+   ```
