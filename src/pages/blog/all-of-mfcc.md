@@ -42,10 +42,10 @@ I will use a example sound wave and process it in python to make it more clear.
    If $ x(t) $ is the signal,
 
    $$
-   y(t) = x(t) - \\alpha x(t-1)
+   y(t) = x(t) - \alpha x(t-1)
    $$
 
-   where, $\\alpha$ is generally 0.95 or 0.97.
+   where, $\alpha$ is generally 0.95 or 0.97.
 
    ```python
        alpha = 0.97
