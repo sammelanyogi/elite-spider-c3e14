@@ -9,8 +9,6 @@ sections:
   label: Blogs
   create: all
   match: "**/*"
-  templates:
-  - blog
 - type: document
   path: site-metadata.json
   label: Site Configuration
