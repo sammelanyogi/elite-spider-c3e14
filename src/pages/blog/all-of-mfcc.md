@@ -22,7 +22,7 @@ A raw audio signal is high-dimensional and difficult to model as there are many 
 
 Following are the steps to compute MFCC.
 
-I will use a sound wave an process it in python to make it more clear.
+I will use a example sound wave and process it in python to make it more clear.
 
 ```python
   import librosa 
@@ -42,10 +42,10 @@ I will use a sound wave an process it in python to make it more clear.
    If $ x(t) $ is the signal,
 
    $$
-   y(t) = x(t) - \\alpha x(t-1)
+   y(t) = x(t) - \alpha x(t-1)
    $$
 
-   where, $\\alpha$ is generally 0.95 or 0.97.
+   where, $\alpha$ is generally 0.95 or 0.97.
 
    ```python
        alpha = 0.97
@@ -57,4 +57,36 @@ I will use a sound wave an process it in python to make it more clear.
    ![amplified signal](/images/yemp.png "Pre-emphasized signal")
 2. **Framing**
 
-   Acoustic signal is perpetually changing in speech.
+   Acoustic signal is perpetually changing in speech. But studies show that the characteristics of voice signal remains fixed in a short interval of time (called quasi-stationary signals). So while modelling the signal we take small segment from the audio for further processing.
+
+   Separating the samples into fixed length segments is know as framing or frame blocking. These frames are usually from 5 milliseconds to 100 milliseconds. But in case of speech signal to preserve the phonemes, we often take the length of 20-40 milliseconds, which is usually the length of phonemes with 10-15 milliseconds overlap.
+
+   These segments are later converted to frequency domain with an FFT.
+
+   ![](/images/framing.jpg)
+
+   **Why do we use overlapping of the frames?**
+
+   We can imagine non-overlapping rectangular frame. Each sample is, somehow, treated with the same weight. However, when we process the features extracted from two consecutive frames, the change of property between the frames may induce a discontinuity, or a jump ("the difference of parameter values of neighboring frames can be higher"). This blocking effect can create disturbance in the signal.
+
+   In Python, the array of amplitude is framed as:
+
+   ```python
+      frame_size = 0.02
+      frame_stride = 0.01 # frame overlap = 0.02 - 0.01 = 0.01 (10ms)
+   
+      frame_length, frame_step = int(round(frame_size * sr)), int(round(frame_stride * sr))  # Convert from seconds to samples
+      signal_length = len(yemp)
+   
+      num_frames = int(np.ceil(float(signal_length - frame_length) / frame_step))  # Make sure that we have at least 1 frame
+   
+      pad_signal_length = num_frames * frame_step + frame_length
+      z = np.zeros((pad_signal_length - signal_length))
+      pad_signal = np.append(yemp, z) # Pad Signal to make sure that all frames have equal number of samples without truncating any samples from the original signal
+   
+      indices = np.tile(np.arange(0, frame_length), (num_frames, 1)) + np.tile(np.arange(0, num_frames * frame_step, frame_step), (frame_length, 1)).T
+      frames = pad_signal[indices.astype(np.int32, copy=False)]
+   ```
+3. **Windowing**
+
+   Windowing multiplies the samples by a scaling function.
