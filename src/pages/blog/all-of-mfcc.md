@@ -1,8 +1,8 @@
 ---
 title: All of MFCC
 date: 2020-09-07
-thumb_image: images/12.jpg
-image: images/12.jpg
+thumb_image: images/sound.jpeg
+image: images/sound.jpeg
 excerpt: Sound is a wave. To store sound in a computer, waves of air pressure are
   converted into voltage via microphone. It is then sampled with an analog-to-digital
   converter where the output is stored as one dimensional array of number.
