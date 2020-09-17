@@ -33,7 +33,7 @@ I will use a sound wave an process it in python to make it more clear.
   y, sr = librosa.load("00a80b4c8a.flac", sr=16000)
 ```
 
-1. Pre-emphasis
+1. **Pre-emphasis**
 
    This is the first step in feature generation. In speech production, high frequencies usually have smaller magnitudes compared to lower frequencies. So in order to counter the effect we apply pre-emphasis signal to amply the amplitude of high frequencies and lower the amplitude of lower frequencies.
 
@@ -49,3 +49,10 @@ I will use a sound wave an process it in python to make it more clear.
        alpha = 0.97
        y_emp = np.append(y[0], y[1:] - alpha * y[:-1])
    ```
+
+   We can visualize the initial signal and amplified signal.
+
+   ![](/images/waves.png)
+2. **Framing**
+
+   Acoustic signal is perpetually changing in speech. 
