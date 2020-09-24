@@ -42,10 +42,10 @@ I will use a example sound wave and process it in python to make it more clear.
    If $ x(t) $ is the signal,
 
    $$
-   y(t) = x(t) - \\alpha x(t-1)
+   y(t) = x(t) - \alpha x(t-1)
    $$
 
-   where, $\\alpha$ is generally 0.95 or 0.97.
+   where, $\alpha$ is generally 0.95 or 0.97.
 
    ```python
        alpha = 0.97
@@ -99,7 +99,7 @@ I will use a example sound wave and process it in python to make it more clear.
    Generally hamming windows are used where
 
    $$  
-   w(n) = 0.54 - 0.46 \\cos\\bigg(\\frac{2\\pi n}{N-1}\\bigg)
+   w(n) = 0.54 - 0.46 \cos\bigg(\frac{2\pi n}{N-1}\bigg)
    $$
 
    ```python
@@ -117,7 +117,7 @@ I will use a example sound wave and process it in python to make it more clear.
    Fourier transform (FT) is a mathematical transform that decomposes a function (often a function of time, or a signal) into its constituent frequencies. This is used to analyze frequencies contained in the speech signal. And it also gives the magnitude of each frequency.
 
    $$
-   X(k) = \\sum_{n=0}^{N-1}x(n).e^{-\\frac{2\\pi i kn}{N}}
+   X(k) = \sum_{n=0}^{N-1}x(n).e^{-\frac{2\pi i kn}{N}}
    $$
    where $ k = 0, 1, 2 ... N-1 $
 
@@ -127,9 +127,9 @@ I will use a example sound wave and process it in python to make it more clear.
    *Spectrogram*
    A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time. For some end-to-end systems, spectrograms are taken as input. This helps in 3D visualization of the FFT.
    Magnitude of Spectrogram
-   $ S_m = \\lvert FFT(x_i) \\rvert^2$
+   $ S_m = \lvert FFT(x_i) \rvert^2$
    Power Spectrogram
-   $ S_p = \\frac{S_m}{N} $
+   $ S_p = \frac{S_m}{N} $
    Where N is the number of points considered for FFT computation. (typically 256 or 512)
 
    In Python
@@ -143,4 +143,3 @@ I will use a example sound wave and process it in python to make it more clear.
    
 5. **Mel-Filter Bank**
 	The magnitude spectrum is warped according to the Mel scale in order to adapt the frequency resolution to the non-linear properties of the human ear by being more discriminative at lower frequencies and less discriminative at higher frequencies. We can convert between Hz scale and Mel scale using the following equations:
-    
