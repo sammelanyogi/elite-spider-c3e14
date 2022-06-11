@@ -34,6 +34,7 @@ Let's now determine a tangent at any point of the equation.
 ![y=x^2 slope](/images/slope.png)
 
 As the two points $(x,y)$ and $(x^{\prime}, y^{\prime})$ become closer and closer to each other, the difference between them tends to zero. The slope of the line can be derived as:
+
 $$
 \begin{aligned}
   \frac{dy}{dx}&=\frac{y-y^{\prime}}{x-x^{\prime}} \\
